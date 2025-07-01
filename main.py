@@ -21,14 +21,14 @@ def map_role(role):
 if "chat_session" not in st.session_state:
     st.session_state.chat_session = model.start_chat(history=[])
     
-st.title("Generative AI Chatbot")
+st.title("new-Gen AI Chatbot")
 
 
 for message in st.session_state.chat_session.history:
     with st.chat_message(map_role(message.role)):
         st.markdown(message.parts[0].text)
 
-user_input= st.chat_input("Type your message here....")
+user_input= st.chat_input("Ask anything....")
 
 if user_input:
     st.chat_message("user").markdown(user_input)
